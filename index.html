@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAI - AI Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">LAI</h1>
+            <nav>
+                <ul>
+                    <li><a href="#image-generator">Image Generator</a></li>
+                    <li><a href="#code-generator">Code Generator</a></li>
+                    <li><a href="#qa-system">Q&A System</a></li>
+                    <li><a href="#summarizer">Summarizer</a></li>
+                    <li><a href="#realtime-info">Real Time Info</a></li>
+                    <li><a href="#chatbot">Chat Bot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>LAI - Advanced AI Platform</h2>
+            <p>Multiple AI tools powered by public models</p>
+        </section>
+
+        <!-- Image Generator -->
+        <section id="image-generator" class="tool-section">
+            <h3>AI Image Generator</h3>
+            <div class="input-group">
+                <textarea id="image-prompt" placeholder="Describe the image you want to generate..." rows="3"></textarea>
+                <button id="generate-image-btn">Generate Image</button>
+            </div>
+            <div class="loading hidden" id="image-loading">
+                <p>Generating image...</p>
+            </div>
+            <div class="result hidden" id="image-result">
+                <img id="generated-image" alt="Generated image">
+                <button id="download-image-btn">Download Image</button>
+            </div>
+        </section>
+
+        <!-- Code Generator -->
+        <section id="code-generator" class="tool-section">
+            <h3>AI Code Generator</h3>
+            <div class="input-group">
+                <textarea id="code-prompt" placeholder="Describe the code you want to generate..." rows="3"></textarea>
+                <select id="code-language">
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="java">Java</option>
+                </select>
+                <button id="generate-code-btn">Generate Code</button>
+            </div>
+            <div class="loading hidden" id="code-loading">
+                <p>Generating code...</p>
+            </div>
+            <div class="result hidden" id="code-result">
+                <pre><code id="generated-code"></code></pre>
+                <button id="copy-code-btn">Copy Code</button>
+            </div>
+        </section>
+
+        <!-- Q&A System -->
+        <section id="qa-system" class="tool-section">
+            <h3>Question Answer System</h3>
+            <div class="input-group">
+                <textarea id="question-input" placeholder="Ask any question..." rows="3"></textarea>
+                <button id="ask-question-btn">Get Answer</button>
+            </div>
+            <div class="loading hidden" id="qa-loading">
+                <p>Finding answer...</p>
+            </div>
+            <div class="result hidden" id="qa-result">
+                <p id="answer-text"></p>
+            </div>
+        </section>
+
+        <!-- Summarizer -->
+        <section id="summarizer" class="tool-section">
+            <h3>Text Summarizer</h3>
+            <div class="input-group">
+                <textarea id="text-to-summarize" placeholder="Paste text to summarize..." rows="5"></textarea>
+                <button id="summarize-btn">Summarize</button>
+            </div>
+            <div class="loading hidden" id="summary-loading">
+                <p>Generating summary...</p>
+            </div>
+            <div class="result hidden" id="summary-result">
+                <p id="summary-text"></p>
+            </div>
+        </section>
+
+        <!-- Real Time Info -->
+        <section id="realtime-info" class="tool-section">
+            <h3>Real Time Information</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Weather</h4>
+                    <div id="weather-info">Enter location below</div>
+                </div>
+                <div class="info-card">
+                    <h4>News Headlines</h4>
+                    <div id="news-info">Loading latest news...</div>
+                </div>
+                <div class="info-card">
+                    <h4>Cryptocurrency</h4>
+                    <div id="crypto-info">Loading crypto data...</div>
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="location-input" placeholder="Enter city for weather">
+                <button id="update-weather-btn">Get Weather</button>
+            </div>
+        </section>
+
+        <!-- Chat Bot -->
+        <section id="chatbot" class="tool-section">
+            <h3>AI Chat Bot</h3>
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        <p>Hello! I'm LAI assistant. How can I help you today?</p>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chat-input" placeholder="Type your message...">
+                    <button id="send-message-btn">Send</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Creator Section -->
+        <section class="creator-section">
+            <h3>Creator</h3>
+            <div class="creator-info">
+                <p><strong>Name:</strong> B Lokajna</p>
+                <p><strong>Email:</strong> <a href="mailto:Lokajna2012@gmail.com">Lokajna2012@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.0"></script>
+    <script src="script.js"></script>
+</body>
+</html>
