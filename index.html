@@ -27,7 +27,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <h2>LAI - Advanced AI Platform</h2>
-            <p>Multiple AI tools powered by public models</p>
+            <p>Multiple AI tools powered by client-side processing</p>
         </section>
 
         <!-- Image Generator -->
@@ -38,10 +38,10 @@
                 <button id="generate-image-btn">Generate Image</button>
             </div>
             <div class="loading hidden" id="image-loading">
-                <p>Generating image...</p>
+                <p>Creating your image...</p>
             </div>
             <div class="result hidden" id="image-result">
-                <img id="generated-image" alt="Generated image">
+                <canvas id="generated-image" width="512" height="512"></canvas>
                 <button id="download-image-btn">Download Image</button>
             </div>
         </section>
@@ -60,9 +60,6 @@
                 </select>
                 <button id="generate-code-btn">Generate Code</button>
             </div>
-            <div class="loading hidden" id="code-loading">
-                <p>Generating code...</p>
-            </div>
             <div class="result hidden" id="code-result">
                 <pre><code id="generated-code"></code></pre>
                 <button id="copy-code-btn">Copy Code</button>
@@ -76,9 +73,6 @@
                 <textarea id="question-input" placeholder="Ask any question..." rows="3"></textarea>
                 <button id="ask-question-btn">Get Answer</button>
             </div>
-            <div class="loading hidden" id="qa-loading">
-                <p>Finding answer...</p>
-            </div>
             <div class="result hidden" id="qa-result">
                 <p id="answer-text"></p>
             </div>
@@ -91,9 +85,6 @@
                 <textarea id="text-to-summarize" placeholder="Paste text to summarize..." rows="5"></textarea>
                 <button id="summarize-btn">Summarize</button>
             </div>
-            <div class="loading hidden" id="summary-loading">
-                <p>Generating summary...</p>
-            </div>
             <div class="result hidden" id="summary-result">
                 <p id="summary-text"></p>
             </div>
@@ -104,21 +95,17 @@
             <h3>Real Time Information</h3>
             <div class="info-grid">
                 <div class="info-card">
-                    <h4>Weather</h4>
-                    <div id="weather-info">Enter location below</div>
+                    <h4>Current Time</h4>
+                    <div id="time-info">Loading...</div>
                 </div>
                 <div class="info-card">
-                    <h4>News Headlines</h4>
-                    <div id="news-info">Loading latest news...</div>
+                    <h4>Browser Info</h4>
+                    <div id="browser-info">Loading...</div>
                 </div>
                 <div class="info-card">
-                    <h4>Cryptocurrency</h4>
-                    <div id="crypto-info">Loading crypto data...</div>
+                    <h4>System Status</h4>
+                    <div id="system-info">All systems operational</div>
                 </div>
-            </div>
-            <div class="input-group">
-                <input type="text" id="location-input" placeholder="Enter city for weather">
-                <button id="update-weather-btn">Get Weather</button>
             </div>
         </section>
 
@@ -128,7 +115,7 @@
             <div class="chat-container">
                 <div class="chat-messages" id="chat-messages">
                     <div class="message bot-message">
-                        <p>Hello! I'm LAI assistant. How can I help you today?</p>
+                        <p>Hello! I'm LAI assistant. I can help you with various tasks including code generation, text summarization, and answering questions. How can I assist you today?</p>
                     </div>
                 </div>
                 <div class="chat-input">
@@ -154,8 +141,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.0"></script>
     <script src="script.js"></script>
 </body>
-</html>
+        </html>
